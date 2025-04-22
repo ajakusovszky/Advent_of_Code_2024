@@ -1,0 +1,18 @@
+[project]
+name="vscode-python"
+version = "1.0.0"
+description = "Advent of Code 2024"
+requires-python = ">=3.12"
+readme = "README.md"
+dependencies = [
+  "pytest>=8.3.5",
+  "python-dotenv>=1.0.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = "codes"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.5",
+]
