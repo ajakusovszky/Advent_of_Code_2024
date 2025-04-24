@@ -21,3 +21,19 @@ def get_array(file_path: str) -> list:
   file_content = get_input_file(file_path).splitlines()
   result = [list(map(int, line.split())) for line in file_content]
   return result
+
+
+def get_array_without_spaces(file_path: str) -> list:
+  file_content = get_input_file(file_path).splitlines()
+  result = [list(line) for line in file_content]
+  return result
+
+
+def get_rules_pages(file_path: str) -> tuple[list[int], list[int]]:
+  file_content = get_input_file(file_path).splitlines()
+  # content is split by an empty line
+  # rules are separated by "|"
+  rules = [list(map(int, line.split("|"))) for line in file_content if "|" in line]
+  # pages are separated by ","
+  pages = [list(map(int, line.split(","))) for line in file_content if "," in line]
+  return rules, pages
